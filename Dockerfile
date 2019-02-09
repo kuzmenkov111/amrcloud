@@ -42,9 +42,15 @@ RUN R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('flextable', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('hrbrmstr/qrencoder')\"" \
 && R -e "install.packages('rgdal', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('mapview', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('configr', repos='https://cran.r-project.org/')"
 
 EXPOSE 3838
+RUN mkdir /home/docker/data \
+&& mkdir /home/docker/app
 
-VOLUME /srv/shiny-server
+VOLUME /home/docker/data
+VOLUME /home/docker/app
+
+EXPOSE 3838
+
+CMD ["R", "-e shiny::runApp('/home/docker/app',port=3838,host='0.0.0.0')"]
