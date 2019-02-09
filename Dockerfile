@@ -10,13 +10,14 @@ RUN R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('fs', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('lubridate', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('remotes', repos='https://cran.r-project.org/')" \
+&& R -e "install.packages('httr', repos='https://cran.r-project.org/')" \
+&& R -e "install.packages('curl', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('dreamRs/shinyWidgets')\"" \
 && R -e "install.packages('stringr', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('tools', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('fst', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('rjson', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('rstudio/DT')\"" \
-&& R -e "install.packages('httr', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('promises', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"install.packages(c('raster', 'sp', 'viridis'), repos='https://cran.r-project.org/');options(unzip = 'internal'); remotes::install_github('rstudio/leaflet')\"" \
 && sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('bhaskarvk/leaflet.extras')\"" \
