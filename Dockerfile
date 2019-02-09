@@ -17,6 +17,7 @@ RUN R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('tools', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('fst', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('rjson', repos='https://cran.r-project.org/')" \
+&& R -e "install.packages('htmlwidgets', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('rstudio/DT')\"" \
 && R -e "install.packages('promises', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"install.packages(c('raster', 'sp', 'viridis'), repos='https://cran.r-project.org/');options(unzip = 'internal'); remotes::install_github('rstudio/leaflet')\"" \
