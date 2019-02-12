@@ -44,6 +44,7 @@ RUN R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('flextable', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('hrbrmstr/qrencoder')\"" \
 && R -e "install.packages('rgdal', repos='https://cran.r-project.org/')" \
+&& R -e "install.packages('anytime', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('configr', repos='https://cran.r-project.org/')"
 
 EXPOSE 3838
