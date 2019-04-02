@@ -4,7 +4,10 @@ RUN R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R CMD javareconf \
 && R -e "install.packages('rJava', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('mailR', repos='https://cran.r-project.org/')" \
+&& R -e "install.packages('anytime', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('shinytoastr', repos='https://cran.r-project.org/')" \
+&& R -e "install.packages('readxl', repos='https://cran.r-project.org/')" \
+&& R -e "install.packages('shinyBS', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('future', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('uuid', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('fs', repos='https://cran.r-project.org/')" \
@@ -39,13 +42,16 @@ RUN R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('ggplot2', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('mapview', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('daattali/timevis')\""\
-&& sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('dreamRs/shinyparticles')\""\
+&& sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('kuzmenkov111/shinyparticles')\""\
 && R -e "install.packages('officer', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('flextable', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('hrbrmstr/qrencoder')\"" \
-&& R -e "install.packages('rgdal', repos='https://cran.r-project.org/')" \
+&& R -e "install.packages(c('rgdal', 'raster'), repos='https://cran.r-project.org/')" \
 && R -e "install.packages('anytime', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('configr', repos='https://cran.r-project.org/')"
+&& R -e "install.packages('configr', repos='https://cran.r-project.org/')" \
+&& sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('kuzmenkov111/Ruchardet')\"" \
+&& sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('kuzmenkov111/qrencoder')\""
+
 
 EXPOSE 3838
 RUN mkdir /home/docker/data \
