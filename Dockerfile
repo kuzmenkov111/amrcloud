@@ -53,8 +53,6 @@ RUN R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('kuzmenkov111/qrencoder')\"" \
 && R -e "install.packages('GetoptLong', repos='https://cran.r-project.org/')"
 
-
-
 EXPOSE 3838
 #RUN mkdir /home/docker/data \
 #&& mkdir /home/docker/app
