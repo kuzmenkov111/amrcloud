@@ -18,14 +18,15 @@ RUN sudo apt install gzip \
 && R -e "install.packages('httr', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('curl', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('shinyWidgets', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('devtools', repos='https://cran.r-project.org/')" \
+#&& R -e "install.packages('devtools', repos='https://cran.r-project.org/')" \
 #&& sudo su - -c "R -e \"options(unzip = 'internal'); devtools::install_github('dreamRs/shinyWidgets')\"" \
 && R -e "install.packages('stringr', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('tools', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('rjson', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('htmlwidgets', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('utils', repos='https://cran.r-project.org/')" \
-&& sudo su - -c "R -e \"options(unzip = 'internal'); devtools::install_github('rstudio/DT')\"" \
+&& R -e "install.packages('DT', repos='https://cran.r-project.org/')" \
+#&& sudo su - -c "R -e \"options(unzip = 'internal'); devtools::install_github('rstudio/DT')\"" \
 # options(unzip = 'internal'); 
 && R -e "install.packages('promises', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"install.packages(c('raster', 'sp', 'viridis'), repos='https://cran.r-project.org/'); remotes::install_github('rstudio/leaflet')\"" \
