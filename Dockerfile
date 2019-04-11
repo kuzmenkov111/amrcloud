@@ -24,6 +24,7 @@ RUN sudo apt install gzip \
 && R -e "install.packages('tools', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('rjson', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('htmlwidgets', repos='https://cran.r-project.org/')" \
+&& R -e "install.packages('utils', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"options(unzip = 'internal'); devtools::install_github('rstudio/DT')\"" \
 # options(unzip = 'internal'); 
 && R -e "install.packages('promises', repos='https://cran.r-project.org/')" \
