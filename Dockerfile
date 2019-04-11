@@ -22,9 +22,9 @@ RUN R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('tools', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('rjson', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('htmlwidgets', repos='https://cran.r-project.org/')" \
-&& sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('rstudio/DT')\"" \
+&& sudo su - -c "R -e \"options(unzip = 'internal'); Sys.setenv(TAR = '/bin/tar'); remotes::install_github('rstudio/DT')\"" \
 && R -e "install.packages('promises', repos='https://cran.r-project.org/')" \
-&& sudo su - -c "R -e \"install.packages(c('raster', 'sp', 'viridis'), repos='https://cran.r-project.org/');options(unzip = 'internal'); remotes::install_github('rstudio/leaflet')\"" \
+&& sudo su - -c "R -e \"install.packages(c('raster', 'sp', 'viridis'), repos='https://cran.r-project.org/'); options(unzip = 'internal'); Sys.setenv(TAR = '/bin/tar'); remotes::install_github('rstudio/leaflet')\"" \
 && sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('bhaskarvk/leaflet.extras')\"" \
 && R -e "install.packages('ggrepel', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('leaflet.minicharts', repos='https://cran.r-project.org/')" \
@@ -42,16 +42,15 @@ RUN R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('formattable', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('ggplot2', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('mapview', repos='https://cran.r-project.org/')" \
-&& sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('daattali/timevis')\""\
-&& sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('kuzmenkov111/shinyparticles')\""\
+&& sudo su - -c "R -e \"options(unzip = 'internal'); Sys.setenv(TAR = '/bin/tar'); remotes::install_github('daattali/timevis')\""\
+&& sudo su - -c "R -e \"options(unzip = 'internal'); Sys.setenv(TAR = '/bin/tar'); remotes::install_github('kuzmenkov111/shinyparticles')\""\
 && R -e "install.packages('officer', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('flextable', repos='https://cran.r-project.org/')" \
-&& sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('hrbrmstr/qrencoder')\"" \
+&& sudo su - -c "R -e \"options(unzip = 'internal'); Sys.setenv(TAR = '/bin/tar'); remotes::install_github('kuzmenkov111/qrencoder')\"" \
 && R -e "install.packages(c('rgdal', 'raster'), repos='https://cran.r-project.org/')" \
 && R -e "install.packages('anytime', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('configr', repos='https://cran.r-project.org/')" \
-&& sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('kuzmenkov111/Ruchardet')\"" \
-&& sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('kuzmenkov111/qrencoder')\"" \
+&& sudo su - -c "R -e \"options(unzip = 'internal'); Sys.setenv(TAR = '/bin/tar'); remotes::install_github('kuzmenkov111/Ruchardet')\"" \
 && R -e "install.packages('GetoptLong', repos='https://cran.r-project.org/')"
 
 
