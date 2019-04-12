@@ -29,8 +29,8 @@ RUN sudo apt update && apt install -y tar \
 #&& sudo su - -c "R -e \"options(unzip = 'internal'); devtools::install_github('rstudio/DT')\"" \
 # options(unzip = 'internal'); 
 && R -e "install.packages('promises', repos='https://cran.r-project.org/')" \
-&& sudo su - -c "R -e \"install.packages(c('raster', 'sp', 'viridis'), repos='https://cran.r-project.org/'); remotes::github_install('rstudio/leaflet')\"" \
-&& sudo su - -c "R -e \"remotes::github_install('bhaskarvk/leaflet.extras')\"" \
+&& sudo su - -c "R -e \"install.packages(c('raster', 'sp', 'viridis'), repos='https://cran.r-project.org/'); remotes::install_github('rstudio/leaflet')\"" \
+&& sudo su - -c "R -e \"remotes::install_github('bhaskarvk/leaflet.extras')\"" \
 && R -e "install.packages('ggrepel', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('leaflet.minicharts', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('rhandsontable', repos='https://cran.r-project.org/')" \
