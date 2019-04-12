@@ -1,6 +1,7 @@
 FROM kuzmenkov/amrcloudbasic:latest
 
-RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
+RUN sudo apt update && apt install -y tar \
+&& R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R CMD javareconf \
 && R -e "install.packages('rJava', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('mailR', repos='https://cran.r-project.org/')" \
