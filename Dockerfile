@@ -1,7 +1,6 @@
 FROM kuzmenkov/amrcloudbasic:latest
 
-RUN sudo R -e "install.packages('pak', repos='https://cran.r-project.org/'); pak::pak_setup()" \
-&& R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
+RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R CMD javareconf \
 && R -e "install.packages('rJava', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('mailR', repos='https://cran.r-project.org/')" \
@@ -29,8 +28,8 @@ RUN sudo R -e "install.packages('pak', repos='https://cran.r-project.org/'); pak
 #&& sudo su - -c "R -e \"options(unzip = 'internal'); devtools::install_github('rstudio/DT')\"" \
 # options(unzip = 'internal'); 
 && R -e "install.packages('promises', repos='https://cran.r-project.org/')" \
-&& sudo su - -c "R -e \"install.packages(c('raster', 'sp', 'viridis'), repos='https://cran.r-project.org/'); pak::pkg_install('rstudio/leaflet')\"" \
-&& sudo su - -c "R -e \"pak::pkg_install('bhaskarvk/leaflet.extras')\"" \
+&& sudo su - -c "R -e \"install.packages(c('raster', 'sp', 'viridis'), repos='https://cran.r-project.org/'); remotes::github_install('rstudio/leaflet')\"" \
+&& sudo su - -c "R -e \"remotes::github_install('bhaskarvk/leaflet.extras')\"" \
 && R -e "install.packages('ggrepel', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('leaflet.minicharts', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('rhandsontable', repos='https://cran.r-project.org/')" \
