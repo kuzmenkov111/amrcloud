@@ -1,6 +1,6 @@
 FROM kuzmenkov/amrcloudbasic:latest
 
-RUN sudo R -e "install.packages('pak', repos='https://cran.r-project.org/'); pak::pak_paksetup()" \
+RUN sudo R -e "install.packages('pak', repos='https://cran.r-project.org/'); pak::pak_setup()" \
 && R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R CMD javareconf \
 && R -e "install.packages('rJava', repos='https://cran.r-project.org/')" \
