@@ -49,7 +49,7 @@ RUN sudo apt update && apt install -y git-core \
 && R -e "install.packages('mapview', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('timevis', repos='https://cran.r-project.org/')" \
 #&& sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('daattali/timevis')\""\
-&& sudo su - -c "R -e \"remotes::git('https://github.com/kuzmenkov111/shinyparticles')\""\
+&& sudo su - -c "R -e \"remotes::install_git('https://github.com/kuzmenkov111/shinyparticles')\""\
 && R -e "install.packages('officer', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('flextable', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"remotes::install_git('https://github.com/kuzmenkov111/qrencoder')\"" \
