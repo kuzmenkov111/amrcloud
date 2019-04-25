@@ -57,7 +57,8 @@ RUN sudo apt update && apt install -y git-core \
 && R -e "install.packages('anytime', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('configr', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"remotes::install_git('https://github.com/kuzmenkov111/Ruchardet')\"" \
-&& R -e "install.packages('GetoptLong', repos='https://cran.r-project.org/')"
+&& R -e "install.packages('GetoptLong', repos='https://cran.r-project.org/')" \
+&& R -e "install.packages('qs', repos='https://cran.r-project.org/')"
 
 
 EXPOSE 3838
@@ -66,6 +67,7 @@ EXPOSE 3838
 
 VOLUME /home/docker/data
 VOLUME /home/docker/app
+VOLUME /home/docker/cashe
 
 EXPOSE 3838
 
