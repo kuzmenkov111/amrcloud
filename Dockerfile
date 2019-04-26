@@ -1,6 +1,7 @@
 FROM kuzmenkov/amrcloudbasic:latest
 
 RUN sudo apt update && apt install -y git-core \
+
 && R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R CMD javareconf \
 && R -e "install.packages('rJava', repos='https://cran.r-project.org/')" \
