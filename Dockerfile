@@ -1,8 +1,6 @@
 FROM kuzmenkov/amrcloudbasic:latest
 
-RUN sudo apt update && apt install -y git-core \
-
-&& R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
+RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R CMD javareconf \
 && R -e "install.packages('rJava', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('mailR', repos='https://cran.r-project.org/')" \
@@ -10,13 +8,12 @@ RUN sudo apt update && apt install -y git-core \
 && R -e "install.packages('fst', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('shinytoastr', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('readxl', repos='https://cran.r-project.org/')" \
+&& R -e "install.packages('readr', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('shinyBS', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('future', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('uuid', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('fs', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('lubridate', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('remotes', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('httr', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('curl', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('shinyWidgets', repos='https://cran.r-project.org/')" \
 #&& R -e "install.packages('devtools', repos='https://cran.r-project.org/')" \
@@ -44,9 +41,7 @@ RUN sudo apt update && apt install -y git-core \
 && R -e "install.packages('fmsb', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('visNetwork', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('igraph', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('tidyr', repos='https://cran.r-project.org/')"\
 && R -e "install.packages('formattable', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('ggplot2', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('mapview', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('timevis', repos='https://cran.r-project.org/')" \
 #&& sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('daattali/timevis')\""\
@@ -54,7 +49,7 @@ RUN sudo apt update && apt install -y git-core \
 && R -e "install.packages('officer', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('flextable', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"remotes::install_git('https://github.com/kuzmenkov111/qrencoder')\"" \
-&& R -e "install.packages(c('rgdal', 'raster'), repos='https://cran.r-project.org/')" \
+&& R -e "install.packages(c('rgdal'), repos='https://cran.r-project.org/')" \
 && R -e "install.packages('anytime', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('configr', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"remotes::install_git('https://github.com/kuzmenkov111/Ruchardet')\"" \
