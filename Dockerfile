@@ -1,5 +1,6 @@
 FROM kuzmenkov/amrcloudbasic:test
 
+
 RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R CMD javareconf \
 && R -e "install.packages('rJava', repos='https://cran.r-project.org/')" \
@@ -58,8 +59,6 @@ RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')"
 
 
 EXPOSE 3838
-#RUN mkdir /home/docker/data \
-#&& mkdir /home/docker/app
 
 VOLUME /home/amrcloud/data
 VOLUME /home/amrcloud/app
