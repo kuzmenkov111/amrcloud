@@ -1,4 +1,4 @@
-FROM kuzmenkov/amrcloudbasic:latest
+FROM kuzmenkov/amrcloudbasic:test
 
 RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R CMD javareconf \
@@ -61,10 +61,10 @@ EXPOSE 3838
 #RUN mkdir /home/docker/data \
 #&& mkdir /home/docker/app
 
-VOLUME /home/docker/data
-VOLUME /home/docker/app
-VOLUME /home/docker/cashe
+VOLUME /home/amrcloud/data
+VOLUME /home/amrcloud/app
+VOLUME /home/amrcloud/cashe
 
 EXPOSE 3838
 
-CMD ["R", "-e shiny::runApp('/home/docker/app',port=3838,host='0.0.0.0')"]
+CMD ["R", "-e shiny::runApp('/home/amrcloud/app',port=3838,host='0.0.0.0')"]
