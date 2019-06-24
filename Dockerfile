@@ -4,7 +4,6 @@ RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')"
 && R CMD javareconf \
 && R -e "install.packages('rJava', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('mailR', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('anytime', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('fst', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('shinytoastr', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('readxl', repos='https://cran.r-project.org/')" \
@@ -55,7 +54,8 @@ RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')"
 && sudo su - -c "R -e \"remotes::install_git('https://github.com/kuzmenkov111/Ruchardet')\"" \
 && R -e "install.packages('GetoptLong', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('qs', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('leafsync', repos='https://cran.r-project.org/')"
+&& R -e "install.packages('leafsync', repos='https://cran.r-project.org/')" \
+&& sudo su - -c "R -e \"options(unzip = 'internal'); devtools::install_github('kuzmenkov111/GAlogger')\"" 
 
 EXPOSE 3838
 
