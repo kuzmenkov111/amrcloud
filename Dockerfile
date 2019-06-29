@@ -1,8 +1,6 @@
-FROM kuzmenkov/amrcloudbasic:latest
+FROM kuzmenkov/amrcloudbasic:basicR
 
 RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
-&& R CMD javareconf \
-&& R -e "install.packages('rJava', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('mailR', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('anytime', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('fst', repos='https://cran.r-project.org/')" \
@@ -54,17 +52,17 @@ RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')"
 && R -e "install.packages('configr', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"remotes::install_git('https://github.com/kuzmenkov111/Ruchardet')\"" \
 && R -e "install.packages('GetoptLong', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('qs', repos='https://cran.r-project.org/')"
+&& R -e "install.packages('qs', repos='https://cran.r-project.org/')" \
+&& R -e "install.packages('leafsync', repos='https://cran.r-project.org/')" \
+&& sudo su - -c "R -e \"remotes::install_git('https://github.com/kuzmenkov111/GAlogger')\""
 
 
 EXPOSE 3838
-#RUN mkdir /home/docker/data \
-#&& mkdir /home/docker/app
 
-VOLUME /home/docker/data
-VOLUME /home/docker/app
-VOLUME /home/docker/cashe
+VOLUME /home/amrcloud_user/data
+VOLUME /home/amrcloud_user/app
+VOLUME /home/amrcloud_user/cashe
 
 EXPOSE 3838
 
-CMD ["R", "-e shiny::runApp('/home/docker/app',port=3838,host='0.0.0.0')"]
+CMD ["R", "-e shiny::runApp('/home/amrcloud_user/app',port=3838,host='0.0.0.0')"]
