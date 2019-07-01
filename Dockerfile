@@ -56,13 +56,12 @@ RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')"
 && R -e "install.packages('leafsync', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"remotes::install_git('https://github.com/kuzmenkov111/GAlogger')\""
 
-
-EXPOSE 3838
-
 VOLUME /home/dockerapp/data
 VOLUME /home/dockerapp/app
 VOLUME /home/dockerapp/cashe
 
 EXPOSE 3838
+
+USER dockerapp
 
 CMD ["R", "-e shiny::runApp('/home/dockerapp/app',port=3838,host='0.0.0.0')"]
