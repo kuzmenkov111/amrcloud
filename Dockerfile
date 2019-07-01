@@ -2,7 +2,7 @@ FROM kuzmenkov/amrcloudbasic:test
 
 RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R CMD javareconf \
-&& R -e "install.packages('devtools', repos='https://cran.r-project.org/')" \
+#&& R -e "install.packages('devtools', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('rJava', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('mailR', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('fst', repos='https://cran.r-project.org/')" \
@@ -61,10 +61,10 @@ RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')"
 
 EXPOSE 3838
 
-VOLUME /home/amrcloud_user/data
-VOLUME /home/amrcloud_user/app
-VOLUME /home/amrcloud_user/cashe
+VOLUME /home/dockerapp/data
+VOLUME /home/dockerapp/app
+VOLUME /home/dockerapp/cashe
 
 EXPOSE 3838
 
-CMD ["R", "-e shiny::runApp('/home/amrcloud_user/app',port=3838,host='0.0.0.0')"]
+CMD ["R", "-e shiny::runApp('/home/dockerapp/app',port=3838,host='0.0.0.0')"]
