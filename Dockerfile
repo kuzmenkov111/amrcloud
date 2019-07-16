@@ -55,6 +55,7 @@ RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')"
 && R -e "install.packages('qs', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('leafsync', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"remotes::install_git('https://github.com/kuzmenkov111/GAlogger')\""
+&& R -e "install.packages('waiter', repos='https://cran.r-project.org/')"
 
 VOLUME /home/dockerapp/data
 VOLUME /home/dockerapp/app
