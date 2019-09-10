@@ -1,70 +1,61 @@
-FROM kuzmenkov/amrcloudbasic:latest
+FROM kuzmenkov/amrcloudbasic:minicran
 
-RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
-&& R CMD javareconf \
-&& R -e "install.packages('rJava', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('mailR', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('anytime', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('fst', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('shinytoastr', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('readxl', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('readr', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('shinyBS', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('future', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('uuid', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('fs', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('lubridate', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('curl', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('shinyWidgets', repos='https://cran.r-project.org/')" \
-#&& R -e "install.packages('devtools', repos='https://cran.r-project.org/')" \
-#&& sudo su - -c "R -e \"options(unzip = 'internal'); devtools::install_github('dreamRs/shinyWidgets')\"" \
-&& R -e "install.packages('stringr', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('tools', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('rjson', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('htmlwidgets', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('utils', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('DT', repos='https://cran.r-project.org/')" \
-#&& sudo su - -c "R -e \"options(unzip = 'internal'); devtools::install_github('rstudio/DT')\"" \
-# options(unzip = 'internal'); 
-&& R -e "install.packages('promises', repos='https://cran.r-project.org/')" \
-&& sudo su - -c "R -e \"install.packages(c('raster', 'sp', 'viridis', 'leaflet', 'leaflet.extras'), repos='https://cran.r-project.org/')\"" \
-#&& sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('bhaskarvk/leaflet.extras')\"" \
-&& R -e "install.packages('ggrepel', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('leaflet.minicharts', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('rhandsontable', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('ipc', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('shinyAce', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('RSQLite', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('glue', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('highcharter', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('shinycssloaders', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('fmsb', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('visNetwork', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('igraph', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('formattable', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('mapview', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('timevis', repos='https://cran.r-project.org/')" \
-#&& sudo su - -c "R -e \"options(unzip = 'internal'); remotes::install_github('daattali/timevis')\""\
-&& sudo su - -c "R -e \"remotes::install_git('https://github.com/kuzmenkov111/shinyparticles')\""\
-&& R -e "install.packages('officer', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('flextable', repos='https://cran.r-project.org/')" \
-&& sudo su - -c "R -e \"remotes::install_git('https://github.com/kuzmenkov111/qrencoder')\"" \
-&& R -e "install.packages(c('rgdal'), repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('anytime', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('configr', repos='https://cran.r-project.org/')" \
-&& sudo su - -c "R -e \"remotes::install_git('https://github.com/kuzmenkov111/Ruchardet')\"" \
-&& R -e "install.packages('GetoptLong', repos='https://cran.r-project.org/')" \
-&& R -e "install.packages('qs', repos='https://cran.r-project.org/')"
+RUN sudo R -e "install.packages('stringi')" \
+&& R -e "install.packages('mailR')" \
+&& R -e "install.packages('fst')" \
+&& R -e "install.packages('shinytoastr')" \
+&& R -e "install.packages('readxl')" \
+&& R -e "install.packages('readr')" \
+&& R -e "install.packages('shinyBS')" \
+&& R -e "install.packages('future')" \
+&& R -e "install.packages('uuid')" \
+&& R -e "install.packages('fs')" \
+&& R -e "install.packages('lubridate')" \
+&& R -e "install.packages('curl')" \
+&& R -e "install.packages('shinyWidgets')" \
+&& R -e "install.packages('stringr')" \
+&& R -e "install.packages('tools')" \
+&& R -e "install.packages('rjson')" \
+&& R -e "install.packages('htmlwidgets')" \
+&& R -e "install.packages('utils')" \
+&& R -e "install.packages('DT')" \
+&& R -e "install.packages('promises')" \
+&& sudo su - -c "R -e \"install.packages(c('raster', 'sp', 'viridis', 'leaflet', 'leaflet.extras'))\"" \
+&& R -e "install.packages('ggrepel')" \
+&& R -e "install.packages('leaflet.minicharts')" \
+&& R -e "install.packages('rhandsontable')" \
+&& R -e "install.packages('ipc')" \
+&& R -e "install.packages('shinyAce')" \
+&& R -e "install.packages('RSQLite')" \
+&& R -e "install.packages('glue')" \
+&& R -e "install.packages('highcharter')" \
+&& R -e "install.packages('shinycssloaders')" \
+&& R -e "install.packages('fmsb')" \
+&& R -e "install.packages('visNetwork')" \
+&& R -e "install.packages('igraph')" \
+&& R -e "install.packages('formattable')" \
+&& R -e "install.packages('mapview')" \
+&& R -e "install.packages('timevis')" \
+&& R -e "install.packages('shinyparticles')" \
+&& R -e "install.packages('officer')" \
+&& R -e "install.packages('flextable')" \
+&& R -e "install.packages('qrencoder')" \
+&& R -e "install.packages(c('rgdal'))" \
+&& R -e "install.packages('anytime')" \
+&& R -e "install.packages('configr')" \
+&& R -e "install.packages('Ruchardet')" \
+&& R -e "install.packages('GetoptLong')" \
+&& R -e "install.packages('qs')" \
+&& R -e "install.packages('leafsync')" \
+&& R -e "install.packages('GAlogger')" \
+&& R -e "install.packages('waiter')"
 
-
-EXPOSE 3838
-#RUN mkdir /home/docker/data \
-#&& mkdir /home/docker/app
-
-VOLUME /home/docker/data
-VOLUME /home/docker/app
-VOLUME /home/docker/cashe
+VOLUME /home/dockerapp/data
+VOLUME /home/dockerapp/app
+VOLUME /home/dockerapp/cashe
 
 EXPOSE 3838
 
-CMD ["R", "-e shiny::runApp('/home/docker/app',port=3838,host='0.0.0.0')"]
+USER dockerapp
+
+CMD ["R", "-e shiny::runApp('/home/dockerapp/app',port=3838,host='0.0.0.0')"]
