@@ -1,5 +1,4 @@
 FROM kuzmenkov/amrcloudbasic:minicran
-
 RUN sudo R -e "install.packages('stringi')" \
 && R -e "install.packages('mailR')" \
 && R -e "install.packages('fst')" \
@@ -55,7 +54,6 @@ VOLUME /home/dockerapp/app
 VOLUME /home/dockerapp/cashe
 
 EXPOSE 3838
-
 USER dockerapp
 
 CMD ["R", "-e shiny::runApp('/home/dockerapp/app',port=3838,host='0.0.0.0')"]
