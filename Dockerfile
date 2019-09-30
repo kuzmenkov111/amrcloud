@@ -1,4 +1,5 @@
 FROM kuzmenkov/amrcloudbasic:minicran
+
 RUN sudo R -e "install.packages('stringi')" \
 && R -e "install.packages('mailR')" \
 && R -e "install.packages('fst')" \
@@ -52,6 +53,7 @@ RUN sudo R -e "install.packages('stringi')" \
 VOLUME /home/dockerapp/data
 VOLUME /home/dockerapp/app
 VOLUME /home/dockerapp/cashe
+VOLUME /home/dockerapp/deleted
 
 EXPOSE 3838
 USER dockerapp
