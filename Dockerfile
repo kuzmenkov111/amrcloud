@@ -1,5 +1,4 @@
 FROM kuzmenkov/amrcloudbasic:basicR
-
 RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('mailR', repos='https://cran.r-project.org/')" \
 && R -e "install.packages('anytime', repos='https://cran.r-project.org/')" \
@@ -60,6 +59,7 @@ RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')"
 VOLUME /home/dockerapp/data
 VOLUME /home/dockerapp/app
 VOLUME /home/dockerapp/cashe
+VOLUME /home/dockerapp/deleted
 
 EXPOSE 3838
 
