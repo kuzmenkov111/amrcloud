@@ -1,4 +1,5 @@
 FROM kuzmenkov/amrcloudbasic:test
+
 RUN sudo R -e "install.packages('stringi', repos='https://cran.r-project.org/')" \
 && R CMD javareconf \
 #&& R -e "install.packages('devtools', repos='https://cran.r-project.org/')" \
@@ -64,6 +65,7 @@ EXPOSE 3838
 VOLUME /home/dockerapp/data
 VOLUME /home/dockerapp/app
 VOLUME /home/dockerapp/cashe
+VOLUME /home/dockerapp/deleted
 
 EXPOSE 3838
 
