@@ -2,10 +2,10 @@ FROM kuzmenkov/amrcloudbasic:mro_minicran
 
 RUN sudo R -e "install.packages('stringi', repos='https://cran.amrcloud.net/')" \
 && R CMD javareconf \
-&& R -e "install.packages(c('rJava', 'mailR', 'fst', 'shinytoastr', 'readxl', 'readr', 'shinyBS', 'future', 'uuid', 'fs', 'lubridate', 'curl', \
-'shinyWidgets', 'stringr', 'tools', 'rjson', 'htmlwidgets', 'utils', 'DT', 'promises', 'raster', 'sp', 'viridis', 'leaflet', 'leaflet.extras', \
-'ggrepel', 'leaflet.minicharts', 'rhandsontable', 'ipc', 'shinyAce', 'RSQLite', 'glue', 'highcharter', 'shinycssloaders', \
-'fmsb', 'visNetwork', 'igraph', 'formattable', 'mapview', 'timevis', 'shinyparticles', 'officer', 'flextable', 'qrencoder', \
+&& R -e "install.packages(c('rJava', 'mailR', 'fst', 'shinytoastr', 'readxl', 'readr', 'shinyBS', 'future', 'uuid', 'fs', 'lubridate', 'curl', 
+'shinyWidgets', 'stringr', 'tools', 'rjson', 'htmlwidgets', 'utils', 'DT', 'promises', 'raster', 'sp', 'viridis', 'leaflet', 'leaflet.extras', 
+'ggrepel', 'leaflet.minicharts', 'rhandsontable', 'ipc', 'shinyAce', 'RSQLite', 'glue', 'highcharter', 'shinycssloaders', 
+'fmsb', 'visNetwork', 'igraph', 'formattable', 'mapview', 'timevis', 'shinyparticles', 'officer', 'flextable', 'qrencoder', 
 'rgdal', 'anytime', 'configr', 'Ruchardet', 'GetoptLong', 'qs', 'leafsync', 'GAlogger', 'waiter'), repos='https://cran.amrcloud.net/')"
 
 
