@@ -10,5 +10,6 @@ VOLUME /home/dockerapp/cashe
 VOLUME /home/dockerapp/deleted
 
 EXPOSE 3838
+USER dockerapp
 
 CMD ["R", "-e shiny::runApp('/home/dockerapp/app',port=3838,host='0.0.0.0')"]
