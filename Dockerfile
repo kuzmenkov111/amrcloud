@@ -1,4 +1,5 @@
 FROM kuzmenkov/amrcloudbasic:minicran4
+
 RUN sudo R -e "install.packages('stringi')" \
 && R -e "install.packages('mailR')" \
 && R -e "install.packages('fst')" \
