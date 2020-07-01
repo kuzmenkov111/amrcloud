@@ -1,5 +1,4 @@
 FROM kuzmenkov/amrcloudbasic:4.1
-
 RUN sudo R -e "install.packages('stringi')" \
 && R -e "install.packages('mailR')" \
 && R -e "install.packages('fst')" \
@@ -55,12 +54,10 @@ RUN sudo R -e "install.packages('stringi')" \
 && R -e "install.packages('shinybusy')" \
 && R -e "install.packages('waiter')" \
 && R -e "install.packages('leaflet.extras2')" 
-
 VOLUME /home/dockerapp/data
 VOLUME /home/dockerapp/app
 VOLUME /home/dockerapp/cashe
 VOLUME /home/dockerapp/deleted
 EXPOSE 3838
 USER dockerapp
-
 CMD ["R", "-e shiny::runApp('/home/dockerapp/app',port=3838,host='0.0.0.0')"]
