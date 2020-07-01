@@ -53,7 +53,8 @@ RUN sudo R -e "install.packages('stringi')" \
 && R -e "install.packages('leafsync')" \
 && R -e "install.packages('GAlogger')" \
 && R -e "install.packages('shinybusy')" \
-&& R -e "install.packages('waiter')"
+&& R -e "install.packages('waiter')" \
+&& R -e "install.packages('leaflet.extras2')" 
 
 VOLUME /home/dockerapp/data
 VOLUME /home/dockerapp/app
