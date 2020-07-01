@@ -1,4 +1,4 @@
-FROM kuzmenkov/amrcloudbasic:minicran4.1
+FROM kuzmenkov/amrcloudbasic:4.1
 
 RUN sudo R -e "install.packages('stringi')" \
 && R -e "install.packages('mailR')" \
