@@ -1,13 +1,12 @@
 FROM kuzmenkov/amrcloudbasic:4.1
-
 RUN sudo R -e "install.packages('stringi')" \
 && R -e "install.packages('mailR')" \
 && R -e "install.packages('fst')" \
+&& R -e "install.packages('svglite')" \
 && R -e "install.packages('shinytoastr')" \
 && R -e "install.packages('readxl')" \
 && R -e "install.packages('readr')" \
 && R -e "install.packages('shinyBS')" \
-&& R -e "install.packages('svglite')" \
 && R -e "install.packages('future')" \
 && R -e "install.packages('uuid')" \
 && R -e "install.packages('fs')" \
