@@ -7,6 +7,7 @@ RUN sudo R -e "install.packages('stringi')" \
 && R -e "install.packages('readxl')" \
 && R -e "install.packages('readr')" \
 && R -e "install.packages('shinyBS')" \
+&& R -e "install.packages('svglite')" \
 && R -e "install.packages('future')" \
 && R -e "install.packages('uuid')" \
 && R -e "install.packages('fs')" \
@@ -20,7 +21,6 @@ RUN sudo R -e "install.packages('stringi')" \
 && R -e "install.packages('utils')" \
 && R -e "install.packages('DT')" \
 && R -e "install.packages('promises')" \
-&& R -e "install.packages('svglite')" \
 && R -e "install.packages('raster')" \
 && R -e "install.packages('sp')" \
 && R -e "install.packages('viridis')" \
