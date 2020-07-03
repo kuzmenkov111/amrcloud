@@ -19,11 +19,11 @@ RUN sudo R -e "install.packages('stringi')" \
 && R -e "install.packages('utils')" \
 && R -e "install.packages('DT')" \
 && R -e "install.packages('promises')" \
+&& R -e "install.packages('svglite')" \
 && R -e "install.packages('raster')" \
 && R -e "install.packages('sp')" \
 && R -e "install.packages('viridis')" \
 && R -e "install.packages('leaflet')" \
-&& R -e "install.packages('svglite')" \
 && R -e "install.packages('leaflet.extras')" \
 && R -e "install.packages('ggrepel')" \
 && R -e "install.packages('leaflet.minicharts')" \
