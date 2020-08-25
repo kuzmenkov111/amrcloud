@@ -1,8 +1,7 @@
-FROM kuzmenkov/amrcloudbasic:4.1
+FROM kuzmenkov/amrcloudbasic:4.2
 RUN sudo R -e "install.packages('stringi')" \
 && R -e "install.packages('mailR')" \
 && R -e "install.packages('fst')" \
-&& R -e "install.packages('svglite')" \
 && R -e "install.packages('shinytoastr')" \
 && R -e "install.packages('readxl')" \
 && R -e "install.packages('readr')" \
@@ -54,7 +53,17 @@ RUN sudo R -e "install.packages('stringi')" \
 && R -e "install.packages('GAlogger')" \
 && R -e "install.packages('shinybusy')" \
 && R -e "install.packages('waiter')" \
-&& R -e "install.packages('leaflet.extras2')" 
+&& R -e "install.packages('leaflet.extras2')" \
+&& R -e "install.packages(c('shinydashboardPlus'))" \
+&& R -e "install.packages(c('shinydisconnect'))" \
+&& R -e "install.packages(c('fresh'))" \
+&& R -e "install.packages(c('rvg'))" \
+&& R -e "install.packages(c('apexcharter'))" \
+&& R -e "install.packages(c('grillade'))" \
+&& R -e "install.packages(c('cssgrid'))" \
+&& R -e "install.packages(c('longears'))" \
+&& R -e "install.packages(c('mschart'))" \
+&& R -e "install.packages(c('RcppUUID'))" 
 VOLUME /home/dockerapp/data
 VOLUME /home/dockerapp/app
 VOLUME /home/dockerapp/cashe
